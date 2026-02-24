@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, Star, ShieldCheck, Truck, RotateCcw, Box } from "lucide-react";
 import DetailsSkeleton from "../Loader/DetailsSkeleton";
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -20,6 +21,14 @@ const ProductDetails = () => {
       })
       .catch(() => setLoading(false));
   }, [id]);
+
+  const handleQuote = () => {
+    toast.success("Thank you for your interest! Our team will contact you shortly with a personalized quote.");
+  };
+
+  const handleTestDrive = () => {
+    toast.success("Your test drive request has been received! Our team will reach out to you soon to schedule your experience.");
+  };
 
   if (loading) return <DetailsSkeleton />;
   if (!product) return <p className="text-center py-20 text-white">Product not found</p>;
@@ -129,12 +138,12 @@ const ProductDetails = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-auto">
-            <button className="flex-1 relative group overflow-hidden bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-2xl font-bold transition-all active:scale-95">
+            <button onClick={handleQuote} className="flex-1 relative group overflow-hidden bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-2xl font-bold transition-all active:scale-95">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <span className="relative z-10">Contact Dealer</span>
+              <span className="relative z-10">Request Quote</span>
             </button>
-            <button className="flex-1 bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 px-8 py-4 rounded-2xl font-bold transition-all">
-              Schedule Test Drive
+            <button onClick={handleTestDrive} className="flex-1 bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 px-8 py-4 rounded-2xl font-bold transition-all">
+              Book Test Drive
             </button>
           </div>
         </div>
