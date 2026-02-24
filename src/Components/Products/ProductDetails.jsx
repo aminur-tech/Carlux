@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, Star, ShieldCheck, Truck, RotateCcw, Box } from "lucide-react";
-import Loader from "../Loader/Loader";
+import DetailsSkeleton from "../Loader/DetailsSkeleton";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -21,7 +21,7 @@ const ProductDetails = () => {
       .catch(() => setLoading(false));
   }, [id]);
 
-  if (loading) return <Loader />;
+  if (loading) return <DetailsSkeleton />;
   if (!product) return <p className="text-center py-20 text-white">Product not found</p>;
 
   return (
