@@ -37,10 +37,10 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="group relative rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+    <div className="group relative rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ">
       
       {/* Image Carousel Container */}
-      <div className="relative h-64 w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
+      <div className="relative h-48 w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
         <AnimatePresence initial={false} custom={direction}>
           <motion.img
             key={currentImg}
