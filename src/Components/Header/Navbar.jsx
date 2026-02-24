@@ -62,7 +62,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Actions: Theme Toggle + CTA */}
+          {/* Theme Toggle + CTA */}
           <div className="hidden md:flex items-center gap-6">
             <button
               onClick={() => setIsDarkMode(!isDarkMode)}

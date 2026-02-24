@@ -9,8 +9,6 @@ const Dashboard = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [sortOption, setSortOption] = useState("");
     const [loading, setLoading] = useState(true);
-
-    // State for "Show More" logic
     const [visibleCount, setVisibleCount] = useState(4);
 
     useEffect(() => {
@@ -23,7 +21,7 @@ const Dashboard = () => {
             .catch(() => setLoading(false));
     }, []);
 
-    // SEARCH + SORT Logic (Unchanged and Fully Functional)
+    // SEARCH + SORT Logic 
     const filteredProducts = useMemo(() => {
         let updated = [...products];
 
@@ -39,18 +37,14 @@ const Dashboard = () => {
             updated.sort((a, b) => b.price - a.price);
         }
 
-        // Reset pagination to 4 whenever the user searches or sorts 
-        // to ensure they see the most relevant results first.
         return updated;
     }, [products, searchTerm, sortOption]);
 
-    // Derived list for the actual UI
     const displayedProducts = filteredProducts.slice(0, visibleCount);
 
     const toggleShow = () => {
         if (visibleCount > 4) {
             setVisibleCount(4);
-            // Optional: Smooth scroll back to top of grid
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
             setVisibleCount(filteredProducts.length);
