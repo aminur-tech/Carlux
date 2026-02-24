@@ -1,16 +1,36 @@
-# React + Vite
+# 🚗 Luxury Automotive Inventory Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive automotive inventory dashboard built with **React**, **React Router**, and **Tailwind CSS**.  
+This project showcases luxury vehicle listings with clean UI and responsive layout.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo
 
-## React Compiler
+🔗 [Live Website](https://carlux-eight.vercel.app/)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- React Router
+- Tailwind CSS
+- Vite
+- Vercel (Deployment)
+
+---
+
+## ✨ Features
+
+- Responsive Navbar with Toggle Button
+- Modern UI Design
+- Vehicle Inventory Display
+- API Data Fetching
+- Clean Layout with Sticky Footer
+- Dark / Light Mode Support
+- Client-side Routing (SPA)
+
+---
+
+
